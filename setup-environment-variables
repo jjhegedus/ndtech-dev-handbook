@@ -1,0 +1,8 @@
+$creds = Import-CSV D:\OneDrive\22ndTech\AWS\ndtech-k8s-admin-credentials.csv
+$aws_access_key_id=$creds | Select-Object "Access key ID"  
+$aws_secret_access_key=$creds | Select-Object "Secret access key"  
+$Env:JX_VALUE_ADMINUSER_PASSWORD="1PaulMuadib@"
+$Env:JX_VALUE_PIPELINEUSER_USERNAME="ndtech-pipeline"
+$Env:JX_VALUE_PIPELINEUSER_EMAIL="ndtech-pipeline@22ndtech.com"
+$Env:JX_VALUE_PIPELINEUSER_TOKEN = Get-Content -path "D:\OneDrive\22ndTech\GitHub\ndtech-pipeline-token.txt"
+$Env:DIGITAL_OCEAN_INITIAL_TOKEN = Get-Content -path "D:\OneDrive\22ndTech\DigitalOcean\digital-ocean-initial-token.txt"
